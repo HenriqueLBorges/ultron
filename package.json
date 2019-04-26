@@ -4,7 +4,7 @@
   "description": "A twitter bot that is meant to prank users replying their tweets with Avengers Ultimato fake spoilers.",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon -r dotenv/config app.js dotenv_config_path=/Users/henriqueborges/Documents/GitHub/ultron/config.env"
+    "test": "nodemon -r dotenv/config app.js dotenv_config_path=/Users/thallesgremi/Projects/ultron/config.env"
   },
   "repository": {
     "type": "git",
