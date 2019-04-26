@@ -29,7 +29,7 @@ let search = (params) => {
 }
 let reply = async (user, message, id) => {
     let params = {
-        status: `Nossa voce sabia que... ${message} :( vai vai  @${user}`,
+        status: `Então @${user} você sabia que no vingadores ultimato ${message}`,
         in_reply_to_status_id: id
     }
     client.post(

@@ -9,10 +9,10 @@ findSpoiler = async () => {
                 db.collection('spoilers', (error, collection) => {
                     if (error) reject(error)
                     else {
-                        collection.find().limit(-1).skip(Math.random()).next((error, results) => {
+                        collection.find().toArray((error, results) => {
                             if (error) reject(error);
                             else
-                                resolve(results);
+                                resolve(results[Math.floor(Math.random()*results.length)]);
                         });
                     }
                 });

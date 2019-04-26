@@ -4,7 +4,7 @@ console.log("What is this?");
 
 //300/hour - replies
 //450/minute - search
-//users
+
 users = [];
 let act = async () => {
     console.log("I had strings, but now I'm free. There are no strings on me...");
@@ -18,15 +18,16 @@ let act = async () => {
                 if(users.indexOf(item.user) < 0){
                     mongo.findSpoiler().then((spoiler) => {
                         twitter.reply(item.user, spoiler.text, item.id);
-                    }).then((error)=>console.error(error));
+                    }).catch((error)=>console.error(error));
 
                     users.push(item.user);
-                } else console.log("Already pranked", item.user);
+                } else console.log("Already pranked this one...", item.user);
             });
         }).catch((error) => console.error(error));
     } catch (error) {
-        console.log("Oh, for God's sake!");
+        console.error("Oh, for God's sake!");
     }
 }
-//Once a hour
-setInterval(act, 3600);
+
+//Every 15 minutes
+setInterval(act, 900000);
