@@ -1,0 +1,23 @@
+{
+  "name": "ultron",
+  "version": "1.0.0",
+  "description": "A twitter bot that is meant to prank users replying their tweets with Avengers Ultimato fake spoilers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueLBorges/ultron.git"
+  },
+  "keywords": [
+    "twitter",
+    "avengers"
+  ],
+  "author": "henriquelborges/tgremi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueLBorges/ultron/issues"
+  },
+  "homepage": "https://github.com/HenriqueLBorges/ultron#readme"
+}
