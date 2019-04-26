@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/HenriqueLBorges/ultron#readme",
   "dependencies": {
+    "twit": "^2.2.11",
     "twitter": "^1.7.1"
   }
 }
