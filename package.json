@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/HenriqueLBorges/ultron/issues"
   },
-  "homepage": "https://github.com/HenriqueLBorges/ultron#readme"
+  "homepage": "https://github.com/HenriqueLBorges/ultron#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
 }
