@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/HenriqueLBorges/ultron#readme",
   "dependencies": {
+    "mongodb": "^3.2.3",
     "nodemon": "^1.18.11",
     "twitter": "^1.7.1"
   },

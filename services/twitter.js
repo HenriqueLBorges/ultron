@@ -9,27 +9,38 @@ let client = new Twitter({
 });
 
 //Define methods here
-let search = () => {
-    let params = {
-        "q": "%22quero%20assistir%20vingadores%22OR%22quero%20ver%20vingadores%22OR%22quero%20testemunhar%20vingadores%22OR%22preciso%20assistir%20vingadores%22OR%22preciso%20ver%20vingadores%22OR%22preciso%20testemunhar%20vingadores%22OR%22tenho%20que%20assistir%20vingadores%22OR%22tenho%20que%20ver%20vingadores%22OR%22tenho%20que%20testemunhar%20vingadores%22",
-        "result_type": "mixed",
-        "count": "10",
-        "lang": "pt",
-        "since_id": ""
-    }
-    result = []
-    client.get("https://api.twitter.com/1.1/search/tweets.json", params, (error, tweets, response) => {
-        if (!error) {
-            tweets.statuses.map((tweet) => {
-                result.push({"user": tweet.user.screen_name, "id": tweet.id_str})
-            });
-        } else {
-            console.error(error);
-        }
-        console.log(result);
+let search = (params) => {
+    
+    let promise = new Promise((resolve, reject) => {
+        client.get("https://api.twitter.com/1.1/search/tweets.json", params, (error, tweets, response) => {
+            if (!error) {
+                result = [];
+                tweets.statuses.map((tweet) => {
+                    result.push({ "user": tweet.user.screen_name, "id": tweet.id_str });
+                });
+                resolve(result);
+                //console.log("result =", result);
+            } else {
+                reject(error);
+            }
+        });
     });
+    return promise;
 }
-
+let reply = async (user, message, id) => {
+    let params = {
+        status: `Nossa voce sabia que... ${message} :( vai vai  @${user}`,
+        in_reply_to_status_id: id
+    }
+    client.post(
+        "statuses/update", params, (error, tweet, response) => {
+            if (error) {
+                console.error("error =" + error);
+            } else console.log("Just pranked another one...");
+        }
+    );
+}
 module.exports = {
-    search: search
+    search: search,
+    reply: reply
 }
