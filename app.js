@@ -28,6 +28,6 @@ let act = async () => {
         console.error("Oh, for God's sake!");
     }
 }
-
+act()
 //Every 15 minutes
 setInterval(act, 900000);

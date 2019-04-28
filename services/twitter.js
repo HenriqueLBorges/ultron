@@ -35,7 +35,7 @@ let reply = async (user, message, id) => {
     client.post(
         "statuses/update", params, (error, tweet, response) => {
             if (error) {
-                console.error("error =" + error);
+                console.error("error =", error);
             } else console.log("Just pranked another one...");
         }
     );
